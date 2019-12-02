@@ -40,7 +40,7 @@ ballot_type = [20, 38]
 
 polling_props =
   for prop = %{state: ^state} <- propositions,
-      location = %{state: state} <- locations,
+      location = %{state:^state} <- locations,
       location.ballot_type in ballot_type do
         %{
           prop_id: prop.id,
